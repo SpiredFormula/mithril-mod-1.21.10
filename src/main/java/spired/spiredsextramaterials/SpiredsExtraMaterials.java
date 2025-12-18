@@ -28,6 +28,7 @@ public class SpiredsExtraMaterials implements ModInitializer {
 
 
 		LOGGER.info("Hello Fabric world!");
+		ModTags.initialize();
 		ModBlocks.initialize();
 		ModItems.initialize();
 

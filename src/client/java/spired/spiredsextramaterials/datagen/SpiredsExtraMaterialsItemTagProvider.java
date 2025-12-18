@@ -7,6 +7,7 @@ import net.minecraft.tags.ItemTags;
 import org.jetbrains.annotations.Nullable;
 import spired.spiredsextramaterials.MithrilArmorMaterial;
 import spired.spiredsextramaterials.ModItems;
+import spired.spiredsextramaterials.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -25,6 +26,11 @@ public class SpiredsExtraMaterialsItemTagProvider extends FabricTagProvider.Item
         valueLookupBuilder(ItemTags.TRIMMABLE_ARMOR).add(ModItems.MITHRIL_CHESTPLATE);
         valueLookupBuilder(ItemTags.TRIMMABLE_ARMOR).add(ModItems.MITHRIL_LEGGINGS);
         valueLookupBuilder(ItemTags.TRIMMABLE_ARMOR).add(ModItems.MITHRIL_BOOTS);
+
+        valueLookupBuilder(ModTags.MITHRIL_ARMOR).add(ModItems.MITHRIL_HELMET);
+        valueLookupBuilder(ModTags.MITHRIL_ARMOR).add(ModItems.MITHRIL_CHESTPLATE);
+        valueLookupBuilder(ModTags.MITHRIL_ARMOR).add(ModItems.MITHRIL_LEGGINGS);
+        valueLookupBuilder(ModTags.MITHRIL_ARMOR).add(ModItems.MITHRIL_BOOTS);
 
         valueLookupBuilder(MithrilArmorMaterial.REPAIRS_MITHRIL_ARMOR).add(ModItems.MITHRIL_INGOT);
 

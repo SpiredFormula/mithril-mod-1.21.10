@@ -8,8 +8,11 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorType;
+import spired.spiredsextramaterials.custom.ModArmorItem;
 
 import java.util.function.Function;
 
@@ -23,9 +26,9 @@ public class ModItems {
     public static Item MITHRIL_AXE = registerItem("mithril_axe", properties -> new AxeItem(ModToolMaterials.MITHRIL_TOOL_MATERIAL, 6F, -3.1F, properties) , new Item.Properties());
     public static Item MITHRIL_SHOVEL = registerItem("mithril_shovel", properties -> new ShovelItem(ModToolMaterials.MITHRIL_TOOL_MATERIAL, 1.5F, -3F, properties), new Item.Properties());
     public static Item MITHRIL_HOE = registerItem("mithril_hoe", properties -> new HoeItem(ModToolMaterials.MITHRIL_TOOL_MATERIAL, -2F, -1F, properties), new Item.Properties());
-
     //Armor
-    public static final Item MITHRIL_HELMET = registerItem("mithril_helmet", Item::new,
+    // This is a MithrilArmorItem to detect if the player is wearing a full set
+    public static final Item MITHRIL_HELMET = registerItem("mithril_helmet", ModArmorItem::new,
             new Item.Properties().humanoidArmor(MithrilArmorMaterial.INSTANCE, ArmorType.HELMET)
                     .durability(ArmorType.HELMET.getDurability(MithrilArmorMaterial.BASE_DURABILITY))
     );
