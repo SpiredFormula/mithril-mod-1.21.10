@@ -12,6 +12,11 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import spired.spiredsextramaterials.blocks.ModBlocks;
+import spired.spiredsextramaterials.item.ModItems;
+import spired.spiredsextramaterials.util.ModTags;
+import spired.spiredsextramaterials.world.gen.ModWorldGeneration;
+
 public class SpiredsExtraMaterials implements ModInitializer {
 	public static final String MOD_ID = "spireds-extra-materials";
 
@@ -19,7 +24,7 @@ public class SpiredsExtraMaterials implements ModInitializer {
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	public static final ResourceKey<PlacedFeature> CUSTOM_ORE_PLACED_KEY = ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(SpiredsExtraMaterials.MOD_ID, "ore_custom"));
+	public static final ResourceKey<PlacedFeature> MITHRIL_ORE_PLACED_KEY = ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(SpiredsExtraMaterials.MOD_ID, "mithril_ore"));
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
@@ -31,7 +36,8 @@ public class SpiredsExtraMaterials implements ModInitializer {
 		ModTags.initialize();
 		ModBlocks.initialize();
 		ModItems.initialize();
+		ModWorldGeneration.generateModWorldGen();
 
-		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Decoration.UNDERGROUND_ORES, CUSTOM_ORE_PLACED_KEY);
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Decoration.UNDERGROUND_ORES, MITHRIL_ORE_PLACED_KEY);
 	}
 }

@@ -15,7 +15,7 @@
       },
       {
         "state": {
-          "Name": "spireds-extra-materials:mithril_ore"
+          "Name": "spireds-extra-materials:deepslate_mithril_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

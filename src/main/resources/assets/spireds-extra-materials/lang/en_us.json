@@ -1,6 +1,21 @@
 {
-  "mithrilGroup.spireds-extra-materials": "Mithril Mod",
-  "item.spireds-extra-materials": "Raw Mithril",
+  "mithrilGroup.spireds-extra-materials": "Spried's Extra Materials",
+
+  "item.spireds-extra-materials.raw_mithril": "Raw Mithril",
   "item.spireds-extra-materials.mithril_ingot": "Mithril Ingot",
-  "block.spireds-extra-materials.mithril_ore": "Mithril Ore"
+
+  "item.spireds-extra-materials.mithril_sword": "Mithril Sword",
+  "item.spireds-extra-materials.mithril_pickaxe": "Mithril Pickaxe",
+  "item.spireds-extra-materials.mithril_axe": "Mithril Axe",
+  "item.spireds-extra-materials.mithril_shovel": "Mithril Shovel",
+  "item.spireds-extra-materials.mithril_hoe": "Mithril Hoe",
+
+  "item.spireds-extra-materials.mithril_helmet": "Mithril Helmet",
+  "item.spireds-extra-materials.mithril_chestplate": "Mithril Chestplate",
+  "item.spireds-extra-materials.mithril_leggings": "Mithril Leggings",
+  "item.spireds-extra-materials.mithril_boots": "Mithril Boots",
+
+  "block.spireds-extra-materials.mithril_ore": "Mithril Ore",
+  "block.spireds-extra-materials.deepslate_mithril_ore": "Deepslate Mithril Ore",
+  "block.spireds-extra-materials.mithril_block": "Mithril Block"
 }

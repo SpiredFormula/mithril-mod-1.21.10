@@ -1,4 +1,4 @@
-package spired.spiredsextramaterials;
+package spired.spiredsextramaterials.blocks;
 
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -10,12 +10,15 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import spired.spiredsextramaterials.SpiredsExtraMaterials;
 
 import java.util.function.Function;
 
 public class ModBlocks {
-
     public static Block MITHRIL_ORE = registerBlock("mithril_ore", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).requiresCorrectToolForDrops().strength(3.0f,3.0f),true);
+    public static Block DEEPSLATE_MITHRIL_ORE = registerBlock("deepslate_mithril_ore", Block::new, BlockBehaviour.Properties.of().sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops().strength(4.5F, 3.0F), true);
+    public static Block MITHRIL_BLOCK = registerBlock("mithril_block", Block::new, BlockBehaviour.Properties.of().sound(SoundType.IRON).requiresCorrectToolForDrops().strength(5.0F, 6.0F), true);
+
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem){
 

@@ -1,11 +1,10 @@
-package spired.spiredsextramaterials.custom;
+package spired.spiredsextramaterials.item.custom;
 
 import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Inventory;
@@ -13,16 +12,23 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
-import spired.spiredsextramaterials.ModTags;
 
 
-// TODO allow this to be used for all future set bonuses instead of just mithril
+import java.util.function.Supplier;
+
+
 public class ModArmorItem extends Item {
 
-    private final Holder<MobEffect> effect = new MobEffectInstance(MobEffects.SPEED, 400, 1, false, false ).getEffect();
+    private Holder<MobEffect> effect;
+    private TagKey<Item> tag;
+    private Supplier<MobEffectInstance> effectSupplier;
 
-    public ModArmorItem(Properties properties) {
+    public ModArmorItem(Properties properties, TagKey<Item> t, Supplier<MobEffectInstance> es) {
         super(properties);
+        tag = t;
+        effectSupplier = es;
+        effect = effectSupplier.get().getEffect();
+
     }
 
     @Override
@@ -38,16 +44,12 @@ public class ModArmorItem extends Item {
                 if(!(player.getInventory().getItem(39).getItem().equals(this))) return;
 
 
-                if(checkIfWearingFullSet(player) && checkArmorType(player, ModTags.MITHRIL_ARMOR)){
+                if(checkIfWearingFullSet(player) && checkArmorType(player, tag)){
                     boolean hasEffect = player.hasEffect(effect);
                     if(!hasEffect){
-                        player.addEffect(new MobEffectInstance(MobEffects.SPEED, 5, 0, false, false ));
+                        player.addEffect(effectSupplier.get());
                     }
-
                 }
-
-
-
             }
         }
     }

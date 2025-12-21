@@ -1,4 +1,4 @@
-package spired.spiredsextramaterials;
+package spired.spiredsextramaterials.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -12,7 +12,10 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorType;
-import spired.spiredsextramaterials.custom.ModArmorItem;
+import spired.spiredsextramaterials.*;
+import spired.spiredsextramaterials.blocks.ModBlocks;
+import spired.spiredsextramaterials.item.custom.ModArmorItem;
+import spired.spiredsextramaterials.util.ModTags;
 
 import java.util.function.Function;
 
@@ -28,7 +31,7 @@ public class ModItems {
     public static Item MITHRIL_HOE = registerItem("mithril_hoe", properties -> new HoeItem(ModToolMaterials.MITHRIL_TOOL_MATERIAL, -2F, -1F, properties), new Item.Properties());
     //Armor
     // This is a MithrilArmorItem to detect if the player is wearing a full set
-    public static final Item MITHRIL_HELMET = registerItem("mithril_helmet", ModArmorItem::new,
+    public static final Item MITHRIL_HELMET = registerItem("mithril_helmet", properties -> new ModArmorItem(properties, ModTags.MITHRIL_ARMOR, () -> new MobEffectInstance(MobEffects.SPEED, 400, 0, false, false )),
             new Item.Properties().humanoidArmor(MithrilArmorMaterial.INSTANCE, ArmorType.HELMET)
                     .durability(ArmorType.HELMET.getDurability(MithrilArmorMaterial.BASE_DURABILITY))
     );
@@ -75,6 +78,8 @@ public class ModItems {
             itemGroup.accept(MITHRIL_LEGGINGS);
             itemGroup.accept(MITHRIL_BOOTS);
             itemGroup.accept(ModBlocks.MITHRIL_ORE.asItem());
+            itemGroup.accept(ModBlocks.DEEPSLATE_MITHRIL_ORE.asItem());
+            itemGroup.accept(ModBlocks.MITHRIL_BLOCK.asItem());
         });
     }
 }

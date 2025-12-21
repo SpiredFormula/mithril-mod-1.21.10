@@ -1,9 +1,10 @@
-package spired.spiredsextramaterials;
+package spired.spiredsextramaterials.util;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import spired.spiredsextramaterials.SpiredsExtraMaterials;
 
 public class ModTags {
 

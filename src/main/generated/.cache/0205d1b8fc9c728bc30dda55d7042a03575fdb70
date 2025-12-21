@@ -1,6 +1,10 @@
 // 1.21.10	-999999999-01-01T00:00:00	Spired's Extra Materials/Model Definitions
+93cdd38ed9ac3224124d06e11cc4a1dff7377749 assets/spireds-extra-materials/blockstates/deepslate_mithril_ore.json
+9c2131904ac37ec5930879b387cb17ff2b3c09cf assets/spireds-extra-materials/blockstates/mithril_block.json
 2efb2233d8a32252a521e339c7f44ac1a6070a0d assets/spireds-extra-materials/blockstates/mithril_ore.json
+01babedfab1dd1c2d923eb11655708ab42d8756b assets/spireds-extra-materials/items/deepslate_mithril_ore.json
 0b49b703521ed9f96c3948ee3d35d6cba3c49abf assets/spireds-extra-materials/items/mithril_axe.json
+baceda35143358eb3b8f744427b00cd280f73326 assets/spireds-extra-materials/items/mithril_block.json
 8c3433a8146c270771d3a438ee2c319c2d3d0967 assets/spireds-extra-materials/items/mithril_boots.json
 06b161357dbe3f1b1d86f08f3798218d6ed283eb assets/spireds-extra-materials/items/mithril_chestplate.json
 bfd3e96dec3a819e8be7b76975b43046c5a16465 assets/spireds-extra-materials/items/mithril_helmet.json
@@ -12,6 +16,8 @@ e2557edd7c5e6d3fdbf51f8a29ecccf107cae726 assets/spireds-extra-materials/items/mi
 5b026bd689a05fc4f9d9511dd3b4fd4786a70144 assets/spireds-extra-materials/items/mithril_shovel.json
 9bceb21c290665d94c13e34b04ec6ad53c591fe7 assets/spireds-extra-materials/items/mithril_sword.json
 2a059ee75f08505c702d1503e6a0dc02a1f9486d assets/spireds-extra-materials/items/raw_mithril.json
+b87998a907f2843c4518a5b9665cbea1f4fb85d0 assets/spireds-extra-materials/models/block/deepslate_mithril_ore.json
+5b76c09227ff3455d31c764cc02b63e2e4001d79 assets/spireds-extra-materials/models/block/mithril_block.json
 77b764f4affa9f4db6c54cf2316a13b6a2075820 assets/spireds-extra-materials/models/block/mithril_ore.json
 2a718ddae5706121e090aeb0b8d411074b9fc00b assets/spireds-extra-materials/models/item/mithril_axe.json
 3e94320ace0d167ead05204a2b8238763d09e6f0 assets/spireds-extra-materials/models/item/mithril_boots.json

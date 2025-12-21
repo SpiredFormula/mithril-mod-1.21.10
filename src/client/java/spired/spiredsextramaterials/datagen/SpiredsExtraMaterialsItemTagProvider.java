@@ -5,9 +5,9 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.ItemTags;
 import org.jetbrains.annotations.Nullable;
-import spired.spiredsextramaterials.MithrilArmorMaterial;
-import spired.spiredsextramaterials.ModItems;
-import spired.spiredsextramaterials.ModTags;
+import spired.spiredsextramaterials.item.MithrilArmorMaterial;
+import spired.spiredsextramaterials.item.ModItems;
+import spired.spiredsextramaterials.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 

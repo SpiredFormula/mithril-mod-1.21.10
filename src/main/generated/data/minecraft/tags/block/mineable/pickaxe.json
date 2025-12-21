@@ -1,5 +1,7 @@
 {
   "values": [
-    "spireds-extra-materials:mithril_ore"
+    "spireds-extra-materials:mithril_ore",
+    "spireds-extra-materials:deepslate_mithril_ore",
+    "spireds-extra-materials:mithril_block"
   ]
 }

@@ -7,8 +7,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.storage.loot.LootTable;
-import spired.spiredsextramaterials.ModBlocks;
-import spired.spiredsextramaterials.ModItems;
+import spired.spiredsextramaterials.blocks.ModBlocks;
+import spired.spiredsextramaterials.item.ModItems;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
@@ -22,7 +22,10 @@ public class SpiredsExtraMaterialsBlockLootTableProvider extends FabricBlockLoot
 
     @Override
     public void generate() {
+
         dropOther(ModBlocks.MITHRIL_ORE, ModItems.RAW_MITHRIL);
+        dropOther(ModBlocks.DEEPSLATE_MITHRIL_ORE, ModItems.RAW_MITHRIL);
+        dropSelf(ModBlocks.MITHRIL_BLOCK);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package spired.spiredsextramaterials;
+package spired.spiredsextramaterials.item;
 
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.ToolMaterial;

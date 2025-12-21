@@ -1,4 +1,4 @@
-package spired.spiredsextramaterials;
+package spired.spiredsextramaterials.item;
 
 
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -11,9 +11,10 @@ import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.item.equipment.EquipmentAsset;
 import net.minecraft.world.item.equipment.EquipmentAssets;
+import spired.spiredsextramaterials.SpiredsExtraMaterials;
 
 import java.util.Map;
-
+// TODO make this the ModArmorMaterial class for storing all Armor materials
 public class MithrilArmorMaterial {
     public static final int BASE_DURABILITY = 15;
 

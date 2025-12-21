@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:stick",
+    "X": "spireds-extra-materials:mithril_ingot"
+  },
+  "pattern": [
+    " X ",
+    " # ",
+    " # "
+  ],
+  "result": {
+    "count": 1,
+    "id": "spireds-extra-materials:mithril_shovel"
+  }
+}
