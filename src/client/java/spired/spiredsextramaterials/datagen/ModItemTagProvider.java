@@ -10,12 +10,12 @@ import spired.spiredsextramaterials.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
-public class SpiredsExtraMaterialsItemTagProvider extends FabricTagProvider.ItemTagProvider {
-    public SpiredsExtraMaterialsItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture, @Nullable BlockTagProvider blockTagProvider) {
+public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
+    public ModItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture, @Nullable BlockTagProvider blockTagProvider) {
         super(output, registriesFuture, blockTagProvider);
     }
 
-    public SpiredsExtraMaterialsItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public ModItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
 

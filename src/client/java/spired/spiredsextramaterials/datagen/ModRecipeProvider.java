@@ -16,10 +16,10 @@ import spired.spiredsextramaterials.item.ModItems;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-public class SpiredsExtraMaterialsRecipeProvider extends FabricRecipeProvider {
+public class ModRecipeProvider extends FabricRecipeProvider {
 
 
-    public SpiredsExtraMaterialsRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public ModRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
 
@@ -136,7 +136,7 @@ public class SpiredsExtraMaterialsRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public String getName() {
-        return "SpiredsExtraMaterialsRecipeProvider";
+        return "ModRecipeProvider";
     }
 }
 

@@ -8,9 +8,9 @@ import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
 
-public class SpiredsExtraMaterialsRegistryDataGenerator extends FabricDynamicRegistryProvider {
+public class ModRegistryDataGenerator extends FabricDynamicRegistryProvider {
 
-    public SpiredsExtraMaterialsRegistryDataGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public ModRegistryDataGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
 
@@ -22,7 +22,7 @@ public class SpiredsExtraMaterialsRegistryDataGenerator extends FabricDynamicReg
 
     @Override
     public String getName() {
-        return "SpiredsExtraMaterialsRegistryDataGenerator";
+        return "ModRegistryDataGenerator";
     }
 }
 

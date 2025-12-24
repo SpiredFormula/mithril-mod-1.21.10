@@ -8,18 +8,18 @@ import spired.spiredsextramaterials.world.ModConfiguredFeatures;
 import spired.spiredsextramaterials.world.ModPlacedFeatures;
 
 
-public class SpiredsExtraMaterialsDataGenerator implements DataGeneratorEntrypoint {
+public class ModDataGenerator implements DataGeneratorEntrypoint {
 
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
-        pack.addProvider(SpiredsExtraMaterialsBlockTagProvider::new);
-        pack.addProvider(SpiredsExtraMaterialsItemTagProvider::new);
-        pack.addProvider(SpiredsExtraMaterialsBlockLootTableProvider::new);
-        pack.addProvider(SpiredsExtraMaterialsRecipeProvider::new);
-        pack.addProvider(SpiredsExtraMaterialsRegistryDataGenerator::new);
-        pack.addProvider(SpiredsExtraMaterialsModelProvider::new);
+        pack.addProvider(ModBlockTagProvider::new);
+        pack.addProvider(ModItemTagProvider::new);
+        pack.addProvider(ModBlockLootTableProvider::new);
+        pack.addProvider(ModRecipeProvider::new);
+        pack.addProvider(ModRegistryDataGenerator::new);
+        pack.addProvider(ModModelProvider::new);
     }
     @Override
     public void buildRegistry(RegistryBuilder registryBuilder){

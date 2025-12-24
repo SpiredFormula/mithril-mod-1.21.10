@@ -22,7 +22,7 @@
 			"spired.spiredsextramaterials.SpiredsExtraMaterialsClient"
 		],
 		"fabric-datagen": [
-			"spired.spiredsextramaterials.datagen.SpiredsExtraMaterialsDataGenerator"
+			"spired.spiredsextramaterials.datagen.ModDataGenerator"
 		]
 	},
 	"mixins": [

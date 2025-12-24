@@ -7,10 +7,10 @@ import spired.spiredsextramaterials.blocks.ModBlocks;
 import spired.spiredsextramaterials.item.ModItems;
 import java.util.concurrent.CompletableFuture;
 
-public class SpiredsExtraMaterialsBlockLootTableProvider extends FabricBlockLootTableProvider {
+public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
 
 
-    protected SpiredsExtraMaterialsBlockLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+    protected ModBlockLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
         super(dataOutput, registryLookup);
     }
 

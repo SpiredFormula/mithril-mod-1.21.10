@@ -10,10 +10,10 @@ import spired.spiredsextramaterials.blocks.ModBlocks;
 import spired.spiredsextramaterials.item.MithrilArmorMaterial;
 import spired.spiredsextramaterials.item.ModItems;
 
-public class SpiredsExtraMaterialsModelProvider extends FabricModelProvider {
+public class ModModelProvider extends FabricModelProvider {
 
 
-    public SpiredsExtraMaterialsModelProvider(FabricDataOutput output) {
+    public ModModelProvider(FabricDataOutput output) {
         super(output);
     }
 
