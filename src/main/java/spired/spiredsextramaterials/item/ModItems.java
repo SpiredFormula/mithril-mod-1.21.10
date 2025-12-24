@@ -37,20 +37,20 @@ public class ModItems {
     //Armor
     // This is a MithrilArmorItem to detect if the player is wearing a full set
     public static final Item MITHRIL_HELMET = registerItem("mithril_helmet", properties -> new ModArmorItem(properties, ModTags.MITHRIL_ARMOR, () -> new StatusEffectInstance(StatusEffects.SPEED, 400, 0, false, false )),
-            new Item.Settings().armor(MithrilArmorMaterial.INSTANCE, EquipmentType.HELMET)
-                    .maxDamage(EquipmentType.HELMET.getMaxDamage(MithrilArmorMaterial.BASE_DURABILITY))
+            new Item.Settings().armor(ModArmorMaterials.MITHRIL_ARMOR_INSTANCE, EquipmentType.HELMET)
+                    .maxDamage(EquipmentType.HELMET.getMaxDamage(ModArmorMaterials.BASE_DURABILITY))
     );
     public static final Item MITHRIL_CHESTPLATE = registerItem("mithril_chestplate", Item::new,
-            new Item.Settings().armor(MithrilArmorMaterial.INSTANCE, EquipmentType.CHESTPLATE)
-                    .maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(MithrilArmorMaterial.BASE_DURABILITY))
+            new Item.Settings().armor(ModArmorMaterials.MITHRIL_ARMOR_INSTANCE, EquipmentType.CHESTPLATE)
+                    .maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(ModArmorMaterials.BASE_DURABILITY))
     );
     public static final Item MITHRIL_LEGGINGS = registerItem("mithril_leggings", Item::new,
-            new Item.Settings().armor(MithrilArmorMaterial.INSTANCE, EquipmentType.LEGGINGS)
-                    .maxDamage(EquipmentType.LEGGINGS.getMaxDamage(MithrilArmorMaterial.BASE_DURABILITY))
+            new Item.Settings().armor(ModArmorMaterials.MITHRIL_ARMOR_INSTANCE, EquipmentType.LEGGINGS)
+                    .maxDamage(EquipmentType.LEGGINGS.getMaxDamage(ModArmorMaterials.BASE_DURABILITY))
     );
     public static final Item MITHRIL_BOOTS = registerItem("mithril_boots", Item::new,
-            new Item.Settings().armor(MithrilArmorMaterial.INSTANCE, EquipmentType.BOOTS)
-                    .maxDamage(EquipmentType.BOOTS.getMaxDamage(MithrilArmorMaterial.BASE_DURABILITY))
+            new Item.Settings().armor(ModArmorMaterials.MITHRIL_ARMOR_INSTANCE, EquipmentType.BOOTS)
+                    .maxDamage(EquipmentType.BOOTS.getMaxDamage(ModArmorMaterials.BASE_DURABILITY))
     );
 
     // Create creative tab

@@ -7,7 +7,7 @@ import net.minecraft.client.data.BlockStateModelGenerator;
 import net.minecraft.client.data.ItemModelGenerator;
 import net.minecraft.client.data.Models;
 import spired.spiredsextramaterials.blocks.ModBlocks;
-import spired.spiredsextramaterials.item.MithrilArmorMaterial;
+import spired.spiredsextramaterials.item.ModArmorMaterials;
 import spired.spiredsextramaterials.item.ModItems;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -35,9 +35,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.MITHRIL_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.MITHRIL_HOE, Models.HANDHELD);
 
-        itemModelGenerator.registerArmor( ModItems.MITHRIL_HELMET, MithrilArmorMaterial.MITHRIL_ARMOR_MATERIAL_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor( ModItems.MITHRIL_CHESTPLATE, MithrilArmorMaterial.MITHRIL_ARMOR_MATERIAL_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor( ModItems.MITHRIL_LEGGINGS, MithrilArmorMaterial.MITHRIL_ARMOR_MATERIAL_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor( ModItems.MITHRIL_BOOTS, MithrilArmorMaterial.MITHRIL_ARMOR_MATERIAL_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor( ModItems.MITHRIL_HELMET, ModArmorMaterials.MITHRIL_ARMOR_MATERIAL_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor( ModItems.MITHRIL_CHESTPLATE, ModArmorMaterials.MITHRIL_ARMOR_MATERIAL_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor( ModItems.MITHRIL_LEGGINGS, ModArmorMaterials.MITHRIL_ARMOR_MATERIAL_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor( ModItems.MITHRIL_BOOTS, ModArmorMaterials.MITHRIL_ARMOR_MATERIAL_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
     }
 }
