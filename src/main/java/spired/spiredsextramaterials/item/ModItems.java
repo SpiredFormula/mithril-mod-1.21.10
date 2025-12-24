@@ -17,7 +17,6 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.item.*;
 import spired.spiredsextramaterials.*;
 import spired.spiredsextramaterials.blocks.ModBlocks;
 import spired.spiredsextramaterials.item.custom.ModArmorItem;

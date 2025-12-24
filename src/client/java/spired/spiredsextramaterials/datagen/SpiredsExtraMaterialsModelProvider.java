@@ -3,38 +3,41 @@ package spired.spiredsextramaterials.datagen;
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.minecraft.client.data.models.BlockModelGenerators;
-import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.data.models.model.ModelTemplates;
-import spired.spiredsextramaterials.item.MithrilArmorMaterial;
+import net.minecraft.client.data.BlockStateModelGenerator;
+import net.minecraft.client.data.ItemModelGenerator;
+import net.minecraft.client.data.Models;
 import spired.spiredsextramaterials.blocks.ModBlocks;
+import spired.spiredsextramaterials.item.MithrilArmorMaterial;
 import spired.spiredsextramaterials.item.ModItems;
 
 public class SpiredsExtraMaterialsModelProvider extends FabricModelProvider {
+
+
     public SpiredsExtraMaterialsModelProvider(FabricDataOutput output) {
         super(output);
     }
 
     @Override
-    public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
-        blockModelGenerators.createTrivialCube(ModBlocks.MITHRIL_ORE);
-        blockModelGenerators.createTrivialCube(ModBlocks.MITHRIL_BLOCK);
-        blockModelGenerators.createTrivialCube(ModBlocks.DEEPSLATE_MITHRIL_ORE);
+    public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MITHRIL_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_MITHRIL_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MITHRIL_BLOCK);
     }
 
-    @Override
-    public void generateItemModels(ItemModelGenerators itemModelGenerators) {
-        itemModelGenerators.generateFlatItem(ModItems.RAW_MITHRIL, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.MITHRIL_INGOT, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.MITHRIL_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.MITHRIL_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.MITHRIL_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.MITHRIL_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.MITHRIL_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
 
-        itemModelGenerators.generateTrimmableItem(ModItems.MITHRIL_HELMET, MithrilArmorMaterial.MITHRIL_ARMOR_MATERIAL_KEY,ItemModelGenerators.TRIM_PREFIX_HELMET, false );
-        itemModelGenerators.generateTrimmableItem(ModItems.MITHRIL_CHESTPLATE, MithrilArmorMaterial.MITHRIL_ARMOR_MATERIAL_KEY,ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false );
-        itemModelGenerators.generateTrimmableItem(ModItems.MITHRIL_LEGGINGS, MithrilArmorMaterial.MITHRIL_ARMOR_MATERIAL_KEY,ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false );
-        itemModelGenerators.generateTrimmableItem(ModItems.MITHRIL_BOOTS, MithrilArmorMaterial.MITHRIL_ARMOR_MATERIAL_KEY,ItemModelGenerators.TRIM_PREFIX_BOOTS, false );
+    @Override
+    public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        itemModelGenerator.register(ModItems.RAW_MITHRIL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MITHRIL_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MITHRIL_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.MITHRIL_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.MITHRIL_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.MITHRIL_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.MITHRIL_HOE, Models.HANDHELD);
+
+        itemModelGenerator.registerArmor( ModItems.MITHRIL_HELMET, MithrilArmorMaterial.MITHRIL_ARMOR_MATERIAL_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor( ModItems.MITHRIL_CHESTPLATE, MithrilArmorMaterial.MITHRIL_ARMOR_MATERIAL_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor( ModItems.MITHRIL_LEGGINGS, MithrilArmorMaterial.MITHRIL_ARMOR_MATERIAL_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor( ModItems.MITHRIL_BOOTS, MithrilArmorMaterial.MITHRIL_ARMOR_MATERIAL_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
     }
 }

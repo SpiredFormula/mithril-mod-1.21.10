@@ -1,4 +1,4 @@
-// 1.21.10	-999999999-01-01T00:00:00	Spired's Extra Materials/MithrilModRecipeProvider
+// 1.21.10	-999999999-01-01T00:00:00	Spired's Extra Materials/
 4789f98bb4b847f33cb5dad05e933add07b54bca data/spireds-extra-materials/advancement/recipes/building_blocks/mithril_block.json
 994c054937d8d711419c0320c36c955b3d6c26cf data/spireds-extra-materials/advancement/recipes/combat/mithril_boots.json
 e86dbeb19ff83623d6eba5c7558a872ae3fe7c5a data/spireds-extra-materials/advancement/recipes/combat/mithril_chestplate.json
@@ -19,7 +19,7 @@ b621f4731640215950a6ffa7a2fe48014c9fed48 data/spireds-extra-materials/recipe/mit
 5bd86f089f76f94b41b8b4b27a598990781c3ddf data/spireds-extra-materials/recipe/mithril_helmet.json
 3720aae210dc7fc9b1a12b79867e69673ba676b6 data/spireds-extra-materials/recipe/mithril_hoe.json
 9b12400a8acbff9657e3d1230e47b8eb14883a41 data/spireds-extra-materials/recipe/mithril_ingot.json
-55bf801e4aecff2a5f889259081f3cceeef30e3f data/spireds-extra-materials/recipe/mithril_ingot_from_blasting_raw_mithril.json
+b3be28809a9ec40d7c8cf7480a4234899d5cd8dd data/spireds-extra-materials/recipe/mithril_ingot_from_blasting_raw_mithril.json
 4e975c6c75f4735a54c4866f7174cb1157383dae data/spireds-extra-materials/recipe/mithril_ingot_from_smelting_raw_mithril.json
 796be3ac11cab33f3a8c58a147886ca7aa4ab945 data/spireds-extra-materials/recipe/mithril_leggings.json
 679535531eab4245af9489efb0615999b3dafe8d data/spireds-extra-materials/recipe/mithril_pickaxe.json

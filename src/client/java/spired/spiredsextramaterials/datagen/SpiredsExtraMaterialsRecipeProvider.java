@@ -1,36 +1,36 @@
 package spired.spiredsextramaterials.datagen;
 
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
-
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.world.item.Item;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.world.item.Items;
+import net.minecraft.data.recipe.RecipeExporter;
+import net.minecraft.data.recipe.RecipeGenerator;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.RegistryWrapper;
 import spired.spiredsextramaterials.blocks.ModBlocks;
 import spired.spiredsextramaterials.item.ModItems;
 
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+
 public class SpiredsExtraMaterialsRecipeProvider extends FabricRecipeProvider {
 
-    public SpiredsExtraMaterialsRecipeProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+
+    public SpiredsExtraMaterialsRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
 
     @Override
-    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registryLookup, RecipeOutput exporter) {
-        return new RecipeProvider(registryLookup, exporter) {
+    protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup registryLookup, RecipeExporter exporter) {
+        return new RecipeGenerator(registryLookup, exporter) {
             @Override
-            public void buildRecipes() {
-                HolderLookup.RegistryLookup<Item> itemLookup = registries.lookupOrThrow(Registries.ITEM);
+            public void generate() {
+                RegistryWrapper.Impl<Item> itemLookup = registries.getOrThrow(RegistryKeys.ITEM);
 
-                // MISC Recipes
-                oreSmelting(
+                offerSmelting(
                         List.of(ModItems.RAW_MITHRIL), // Inputs
                         RecipeCategory.MISC, // Category
                         ModItems.MITHRIL_INGOT, // Output
@@ -38,106 +38,116 @@ public class SpiredsExtraMaterialsRecipeProvider extends FabricRecipeProvider {
                         200, // Cooking time
                         "mithril_ingot" // group
                 );
-
-                oreBlasting(
-                        List.of(ModItems.RAW_MITHRIL),
-                        RecipeCategory.MISC,
-                        ModItems.MITHRIL_INGOT,
-                        0.7f,
-                        100,
-                        "mithril_ingot"
+                offerBlasting(
+                        List.of(ModItems.RAW_MITHRIL), // Inputs
+                        RecipeCategory.MISC, // Category
+                        ModItems.MITHRIL_INGOT, // Output
+                        0.7f, // Experience
+                        200, // Cooking time
+                        "mithril_ingot" // group
                 );
-                shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MITHRIL_BLOCK.asItem())
+                createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MITHRIL_BLOCK.asItem())
                         .pattern("###")
                         .pattern("###")
                         .pattern("###")
-                        .define('#', ModItems.MITHRIL_INGOT)
-                        .unlockedBy(getHasName(ModItems.MITHRIL_INGOT ),has(ModItems.MITHRIL_INGOT))
-                        .save(output);
-                shapeless(RecipeCategory.MISC,ModItems.MITHRIL_INGOT, 9)
-                        .requires(ModBlocks.MITHRIL_BLOCK.asItem())
-                        .unlockedBy(getHasName(ModBlocks.MITHRIL_BLOCK.asItem()), has(ModBlocks.MITHRIL_BLOCK.asItem()))
-                        .save(output);
+                        .input('#', ModItems.MITHRIL_INGOT)
+                        .criterion(hasItem(ModItems.MITHRIL_INGOT ),conditionsFromItem(ModItems.MITHRIL_INGOT))
+                        .offerTo(exporter);
+
+                createShapeless(RecipeCategory.MISC,ModItems.MITHRIL_INGOT, 9)
+                        .input(ModBlocks.MITHRIL_BLOCK.asItem())
+                        .criterion(hasItem(ModBlocks.MITHRIL_BLOCK.asItem()), conditionsFromItem(ModBlocks.MITHRIL_BLOCK.asItem()))
+                        .offerTo(exporter);
 
                 // Mithril Armor
-                shaped(RecipeCategory.COMBAT, ModItems.MITHRIL_HELMET)
+                createShaped(RecipeCategory.COMBAT, ModItems.MITHRIL_HELMET)
                         .pattern("XXX")
                         .pattern("X X")
-                        .define('X', ModItems.MITHRIL_INGOT)
-                        .unlockedBy(getHasName(ModItems.MITHRIL_INGOT), has(ModItems.MITHRIL_INGOT))
-                        .save(output);
+                        .input('X', ModItems.MITHRIL_INGOT)
+                        .criterion(hasItem(ModItems.MITHRIL_INGOT), conditionsFromItem(ModItems.MITHRIL_INGOT))
+                        .offerTo(exporter);
 
-                shaped(RecipeCategory.COMBAT, ModItems.MITHRIL_CHESTPLATE)
+                createShaped(RecipeCategory.COMBAT, ModItems.MITHRIL_CHESTPLATE)
                         .pattern("X X")
                         .pattern("XXX")
                         .pattern("XXX")
-                        .define('X', ModItems.MITHRIL_INGOT)
-                        .unlockedBy(getHasName(ModItems.MITHRIL_INGOT), has(ModItems.MITHRIL_INGOT))
-                        .save(output);
+                        .input('X', ModItems.MITHRIL_INGOT)
+                        .criterion(hasItem(ModItems.MITHRIL_INGOT), conditionsFromItem(ModItems.MITHRIL_INGOT))
+                        .offerTo(exporter);
 
-                shaped(RecipeCategory.COMBAT, ModItems.MITHRIL_LEGGINGS)
+                createShaped(RecipeCategory.COMBAT, ModItems.MITHRIL_LEGGINGS)
                         .pattern("XXX")
                         .pattern("X X")
                         .pattern("X X")
-                        .define('X', ModItems.MITHRIL_INGOT)
-                        .unlockedBy(getHasName(ModItems.MITHRIL_INGOT), has(ModItems.MITHRIL_INGOT))
-                        .save(output);
-                shaped(RecipeCategory.COMBAT, ModItems.MITHRIL_BOOTS)
+                        .input('X', ModItems.MITHRIL_INGOT)
+                        .criterion(hasItem(ModItems.MITHRIL_INGOT), conditionsFromItem(ModItems.MITHRIL_INGOT))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.COMBAT, ModItems.MITHRIL_BOOTS)
                         .pattern("X X")
                         .pattern("X X")
-                        .define('X', ModItems.MITHRIL_INGOT)
-                        .unlockedBy(getHasName(ModItems.MITHRIL_INGOT), has(ModItems.MITHRIL_INGOT))
-                        .save(output);
+                        .input('X', ModItems.MITHRIL_INGOT)
+                        .criterion(hasItem(ModItems.MITHRIL_INGOT), conditionsFromItem(ModItems.MITHRIL_INGOT))
+                        .offerTo(exporter);
+
                 // Mithril Tools
-                shaped(RecipeCategory.COMBAT, ModItems.MITHRIL_SWORD)
+                createShaped(RecipeCategory.COMBAT, ModItems.MITHRIL_SWORD)
                         .pattern(" X ")
                         .pattern(" X ")
                         .pattern(" # ")
-                        .define('X', ModItems.MITHRIL_INGOT)
-                        .define('#', Items.STICK)
-                        .unlockedBy(getHasName(ModItems.MITHRIL_INGOT), has(ModItems.MITHRIL_INGOT))
-                        .save(output);
-                shaped(RecipeCategory.TOOLS, ModItems.MITHRIL_PICKAXE)
+                        .input('X', ModItems.MITHRIL_INGOT)
+                        .input('#', Items.STICK)
+                        .criterion(hasItem(ModItems.MITHRIL_INGOT), conditionsFromItem(ModItems.MITHRIL_INGOT))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.TOOLS, ModItems.MITHRIL_PICKAXE)
                         .pattern("XXX")
                         .pattern(" # ")
                         .pattern(" # ")
-                        .define('X', ModItems.MITHRIL_INGOT)
-                        .define('#', Items.STICK)
-                        .unlockedBy(getHasName(ModItems.MITHRIL_INGOT), has(ModItems.MITHRIL_INGOT))
-                        .save(output);
-                shaped(RecipeCategory.TOOLS, ModItems.MITHRIL_SHOVEL)
+                        .input('X', ModItems.MITHRIL_INGOT)
+                        .input('#', Items.STICK)
+                        .criterion(hasItem(ModItems.MITHRIL_INGOT), conditionsFromItem(ModItems.MITHRIL_INGOT))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.TOOLS, ModItems.MITHRIL_SHOVEL)
                         .pattern(" X ")
                         .pattern(" # ")
                         .pattern(" # ")
-                        .define('X', ModItems.MITHRIL_INGOT)
-                        .define('#', Items.STICK)
-                        .unlockedBy(getHasName(ModItems.MITHRIL_INGOT), has(ModItems.MITHRIL_INGOT))
-                        .save(output);
-                shaped(RecipeCategory.TOOLS, ModItems.MITHRIL_AXE)
+                        .input('X', ModItems.MITHRIL_INGOT)
+                        .input('#', Items.STICK)
+                        .criterion(hasItem(ModItems.MITHRIL_INGOT), conditionsFromItem(ModItems.MITHRIL_INGOT))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.TOOLS, ModItems.MITHRIL_AXE)
                         .pattern("XX ")
                         .pattern("X# ")
                         .pattern(" # ")
-                        .define('X', ModItems.MITHRIL_INGOT)
-                        .define('#', Items.STICK)
-                        .unlockedBy(getHasName(ModItems.MITHRIL_INGOT), has(ModItems.MITHRIL_INGOT))
-                        .save(output);
-                shaped(RecipeCategory.TOOLS, ModItems.MITHRIL_HOE)
+                        .input('X', ModItems.MITHRIL_INGOT)
+                        .input('#', Items.STICK)
+                        .criterion(hasItem(ModItems.MITHRIL_INGOT), conditionsFromItem(ModItems.MITHRIL_INGOT))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.TOOLS, ModItems.MITHRIL_HOE)
                         .pattern("XX ")
                         .pattern(" # ")
                         .pattern(" # " )
-                        .define('X', ModItems.MITHRIL_INGOT)
-                        .define('#', Items.STICK)
-                        .unlockedBy(getHasName(ModItems.MITHRIL_INGOT), has(ModItems.MITHRIL_INGOT))
-                        .save(output);
-
+                        .input('X', ModItems.MITHRIL_INGOT)
+                        .input('#', Items.STICK)
+                        .criterion(hasItem(ModItems.MITHRIL_INGOT), conditionsFromItem(ModItems.MITHRIL_INGOT))
+                        .offerTo(exporter);
             }
         };
-
-
     }
 
     @Override
     public String getName() {
-        return "MithrilModRecipeProvider";
+        return "";
     }
 }
+
+
+
+
+
+
+
+//
+//                // Mithril Armor
+
+//                // Mithril Tools
+
