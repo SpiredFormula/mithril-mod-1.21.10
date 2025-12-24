@@ -4,14 +4,11 @@ package spired.spiredsextramaterials.item;
 import spired.spiredsextramaterials.SpiredsExtraMaterials;
 
 import java.util.Map;
-import net.minecraft.item.Item;
 import net.minecraft.item.equipment.ArmorMaterial;
 import net.minecraft.item.equipment.EquipmentAsset;
 import net.minecraft.item.equipment.EquipmentAssetKeys;
 import net.minecraft.item.equipment.EquipmentType;
-import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.tag.TagKey;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import spired.spiredsextramaterials.util.ModTags;

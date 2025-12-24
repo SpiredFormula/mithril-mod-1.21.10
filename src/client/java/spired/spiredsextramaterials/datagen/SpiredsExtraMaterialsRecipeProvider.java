@@ -136,7 +136,7 @@ public class SpiredsExtraMaterialsRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public String getName() {
-        return "";
+        return "SpiredsExtraMaterialsRecipeProvider";
     }
 }
 

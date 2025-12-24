@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import spired.spiredsextramaterials.blocks.ModBlocks;
 import spired.spiredsextramaterials.item.ModItems;
 import spired.spiredsextramaterials.util.ModTags;
+import spired.spiredsextramaterials.world.gen.ModWorldGeneration;
 
 public class SpiredsExtraMaterials implements ModInitializer {
 	public static final String MOD_ID = "spireds-extra-materials";
@@ -24,6 +25,7 @@ public class SpiredsExtraMaterials implements ModInitializer {
 
 
 		LOGGER.info("Hello Fabric world!");
+		ModWorldGeneration.generateWorldGen();
 		ModTags.initialize();
 		ModBlocks.initialize();
 		ModItems.initialize();
